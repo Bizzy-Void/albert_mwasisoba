@@ -64,8 +64,28 @@ const skills = [
     },
 ]
 
+const navRoutes = [
+    {
+        title: 'About',
+        path: '/about',
+    },
+    {
+        title: 'Works',
+        path: '/works',
+    },
+    {
+        title: 'Skills',
+        path: '/skills',
+    },
+    {
+        title: 'Contact',
+        path: '/contact',
+    }
+]
+
 const data = {
-    skills
+    skills,
+    navRoutes
 }
 
 export default data
