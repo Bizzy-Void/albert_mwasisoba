@@ -9,7 +9,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        dancing: ["Dancing Script", "cursive"],
+        iskry: ["Iskry", "cursive"],
+      }
+    },
   },
   plugins: [],
 }

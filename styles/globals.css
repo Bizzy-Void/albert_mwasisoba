@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* fontfaces */
+@font-face {
+    font-family: "Iskry";
+    src: url("../assets/font/Iskry\ Regular.ttf");
+    font-style: normal;
+}
