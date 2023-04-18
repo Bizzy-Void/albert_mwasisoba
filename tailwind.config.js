@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       fontFamily: {
         dancing: ["Dancing Script", "cursive"],
-        iskry: ["Iskry", "cursive"],
+        iskry: ["Iskry", "serif"],
+        neue: ['Neue Montreal', 'sans-serif']
       }
     },
   },

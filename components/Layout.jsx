@@ -15,7 +15,7 @@ function Layout({ children }) {
               <span className='text-gray-500'>.me</span>
             </span>
           </Link>
-          <ul className='text-xs uppercase gap-x-4 flex justify-between'>
+          <ul className='font-neue text-xs uppercase gap-x-4 flex justify-between'>
             {data.navRoutes.map((route, index) => (
               <li key={index}>
                 <NavMenuItem title={route.title} path={route.path} />
