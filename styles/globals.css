@@ -8,3 +8,9 @@
     src: url("../assets/font/Iskry\ Regular.ttf");
     font-style: normal;
 }
+
+@font-face {
+    font-family: "Neue Montreal";
+    src: url("../assets/font/NeueMontreal-Regular.otf");
+    font-style: normal;
+}
