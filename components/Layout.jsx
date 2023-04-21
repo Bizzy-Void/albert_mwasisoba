@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import NavMenuItem from './common/navMenuItem'
+import Footer from './section/footer'
 
 import data from './utils'
 
@@ -28,6 +29,7 @@ function Layout({ children }) {
             {children}
           </div>
         </main>
+        <Footer data={data.mediaData}/>
     </div>
   )
 }
