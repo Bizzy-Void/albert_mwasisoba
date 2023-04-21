@@ -83,9 +83,28 @@ const navRoutes = [
     }
 ]
 
+const mediaData = {
+    email: "albertmwasisoba@gmail.com",
+    medias: [
+        {
+            title: "Github",
+            link: "https://github.com/albizzy",
+        },
+        {
+            title: "Behance",
+            link: "https://www.behance.net/albertmwasisoba",
+        },
+        {
+            title: "Twitter",
+            link: "https://twitter.com/iambizzy19"
+        }
+    ]
+}
+
 const data = {
     skills,
-    navRoutes
+    navRoutes,
+    mediaData
 }
 
 export default data
