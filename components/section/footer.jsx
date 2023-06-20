@@ -1,6 +1,6 @@
 function Footer({data}) {
   return (
-    <footer className='w-full fixed z-50 bottom-0 left-0 px-4 md:px-10 lg:px-32 py-4 text-gray-500 bg-blue-50 md:flex justify-between'>
+    <footer className='w-full fixed z-50 bottom-0 left-0 px-4 md:px-10 lg:px-32 py-4 text-gray-500 md:flex justify-between'>
         {/* email to albert link */}
         <div className="flex justify-center gap-4">
             <a

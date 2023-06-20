@@ -4,12 +4,14 @@ import Footer from './section/footer'
 
 import data from './utils'
 
+// custom styles
+
 function Layout({ children }) {
   return (
-    <div className='flex relative flex-col h-screen'>
-        <nav className='w-full pt-4 pb-2 px-4 md:px-10 lg:px-32 fixed top-0 left-0 z-50 bg-white flex justify-between'>
+    <div className='flex relative flex-col h-screen bg-hero_bg bg-cover bg-center'>
+        <nav className='w-full pt-4 pb-4 px-4 md:px-10 lg:px-32 fixed top-0 left-0 z-50 bg-black bg-opacity-5 backdrop-filter backdrop-blur-3xl p-4 flex justify-between'>
           <Link href={'/'}>
-            <span className='text-3xl font-iskry home-link'>
+            <span className='text-3xl font-iskry home-link text-white'>
               <span className='inline md:hidden'>a</span>
               <span className='hidden md:inline lg:hidden'>albert</span>
               <span className='hidden md:hidden lg:inline'>albertmwasisoba</span>

@@ -1,43 +1,33 @@
-import {useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-function useWindowSize() {
-    const [windowSize, setWindowSize] = useState({
-        // default window size
-        width: 0,
-        height: 0
-    })
-
-    // function to handle window resize || update windowSize whenever window is resized
-    function handleResize(width, height) {
+export function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+  function handleResize(width, height) { 
+    setWindowSize({
+      width: width,
+      height: height,
+    });
+  }
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", function () {
         setWindowSize({
-            width,
-            height
-        })
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      });
+      handleResize(window.innerWidth, window.innerHeight);
+      return () =>
+        window.removeEventListener("resize", function () {
+          setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        });
     }
-
-    useEffect(() => {
-        // check if window is available
-        if (typeof window !== 'undefined') {
-            window.addEventListener('resize', function() {
-                setWindowSize({
-                    width: window.innerWidth,
-                    height: window.innerHeight
-                })
-            });
-            // call handleResize to set initial window size
-            handleResize(window.innerWidth, window.innerHeight)
-            return () =>
-                // remove event listener
-                window.removeEventListener('resize', function() {
-                    // update windowSize
-                    setWindowSize({
-                        width: window.innerWidth,
-                        height: window.innerHeight
-                    })
-                })
-        }
-    }, [])
-  return windowSize
+  }, []);
+  return windowSize;
 }
-
-export default useWindowSize

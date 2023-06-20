@@ -1,0 +1,4 @@
+.background_image {
+    background: url("/public/images/bg.jpg") center no-repeat;
+    background-position: center;
+}

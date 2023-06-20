@@ -14,6 +14,12 @@ module.exports = {
         dancing: ["Dancing Script", "cursive"],
         iskry: ["Iskry", "serif"],
         neue: ['Neue Montreal', 'sans-serif']
+      },
+      backgroundImage:{
+        'hero_bg': "url('/images/bg.jpg')"
+      },
+      backdropBlur: {
+        xs: '2px',
       }
     },
   },
