@@ -1,66 +1,78 @@
-import * as DiIcons from 'react-icons/di';
-import * as SiIcons from 'react-icons/si';
+import { DiFlutter } from 'react-icons/di';
+import { 
+    SiNextdotjs,
+     SiReact,
+    SiNodedotjs,
+    SiTailwindcss,
+    SiBootstrap,
+    SiMysql,
+    SiLinux,
+    SiGit,
+    SiSwagger,
+    SiAdobephotoshop,
+    SiAdobeillustrator,
+} from 'react-icons/si';
 
 const skills = [
     {
         title: 'Flutter Dev',
         link: 'https://flutter.dev/',
-        icon: <DiIcons.DiFlutter />,
+        icon: <DiFlutter />,
     },
     {
         title: 'NextJs',
         link: 'https://nextjs.org/',
-        icon: <SiIcons.SiNextDotJs />,
+        icon: <SiNextdotjs />,
     },
     {
         title: 'ReactJs',
         link: 'https://reactjs.org/',
-        icon: <SiIcons.SiReact />,
+        icon: <SiReact />,
     },
     {
         title: 'NodeJs',
         link: 'https://nodejs.org/en/',
-        icon: <SiIcons.SiNodeDotJs />,
+        icon: <SiNodedotjs />,
     },
     {
         title: 'TailwindCss',
         link: 'https://tailwindcss.com/',
-        icon: <SiIcons.SiTailwindcss />,
+        icon: <SiTailwindcss />,
     },
     {
         title: 'Bootstrap',
         link: 'https://getbootstrap.com/',
-        icon: <SiIcons.SiBootstrap />,
+        icon: <SiBootstrap />,
     },
     {
         title: 'mySQL',
         link: 'https://www.mysql.com/',
-        icon: <SiIcons.SiMysql />,
+        icon: <SiMysql />,
     },
     {
         title: 'Linux',
         link: 'https://www.linux.org/',
-        icon: <SiIcons.SiLinux />,
+        icon: <SiLinux />,
     },
     {
         title: 'Git',
         link: 'https://git-scm.com/',
-        icon: <SiIcons.SiGit />,
+        icon: <SiGit />,
     },
     {
         title: 'Swagger',
         link: 'https://swagger.io/',
-        icon: <SiIcons.SiSwagger />,
+        icon: <SiSwagger />,
     },
     {
         title: 'Photoshop',
         link: 'https://www.adobe.com/products/photoshop.html',
-        icon: <SiIcons.SiAdobephotoshop />,
+        icon: <SiAdobephotoshop />,
     },
     {
         title: 'Illustrator',
         link: 'https://www.adobe.com/products/illustrator.html',
-        icon: <SiIcons.SiAdobeillustrator />,
+        icon: <SiAdobeillustrator />,
     },
 ]
 
@@ -83,6 +95,11 @@ const navRoutes = [
     }
 ]
 
+const aboutMe = {
+    bio: "I am a software developer, and a graphics designer working productively in dynamic environments. Fluent in Javascript, Dart, Typescript and Python. Proud team worker focused on achieving project goals with an efficient and minimalistic approach.",
+    hobbies: "drawing,video games,music,photography,reading",
+};
+
 const mediaData = {
     email: "albertmwasisoba@gmail.com",
     medias: [
@@ -104,7 +121,8 @@ const mediaData = {
 const data = {
     skills,
     navRoutes,
-    mediaData
+    mediaData,
+    aboutMe,
 }
 
 export default data
