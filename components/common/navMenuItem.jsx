@@ -9,11 +9,20 @@ function NavMenuItem({ title, path }) {
             <div
                 className={
                     "/" + router.pathname.split("/")[1] === path
-                        ? " text-gray-900"
+                        ? " text-white"
                         : " text-gray-500"
                 }
             >
                 {title}
+            </div>
+            <div
+            className={`text-center leading-0 font-bold ${
+                "/" + router.pathname.split("/")[1] === path
+                ? " visible text-white "
+                : " invisible text-gray-500 "
+            } text-2xl`}
+            >
+            .
             </div>
         </div>
     </Link>

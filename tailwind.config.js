@@ -20,6 +20,9 @@ module.exports = {
       },
       backdropBlur: {
         xs: '2px',
+      },
+      colors: {
+        'bg_color': "#0D0F0E"
       }
     },
   },
