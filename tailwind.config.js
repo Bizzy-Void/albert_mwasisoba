@@ -22,7 +22,8 @@ module.exports = {
         xs: '2px',
       },
       colors: {
-        'bg_color': "#0D0F0E"
+        'bg_color': "#0D0F0E",
+        'description_bg': "#ffffff10",
       }
     },
   },
