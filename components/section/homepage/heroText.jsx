@@ -1,8 +1,27 @@
+import TextSpan from './textspan'
+
 export default function HeroTexts() {
+  const firstName = "Albert".split("");
+  const lastName = "Mwasisoba".split("");
+
   return (
-    <div className="font-neue text-center md:text-left z-30">
+    <div className="font-neue text-center md:text-left z-30 select-none">
         <h1 className="text-4xl text-gray-500 pb-4">{"Hello, I'm"}</h1>
-        <p className="font-iskry text-white text-6xl md:text-8xl font-bold">Albert <br/> Mwasisoba</p>
+        {firstName.map((letter, index) => {
+          return (
+            <TextSpan key={index}>
+              {letter === " " ? "\n" : letter}
+            </TextSpan>
+          )
+        })}
+        <br/>
+        {lastName.map((letter, index) => {
+          return (
+            <TextSpan key={index}>
+              {letter === " " ? "\n" : letter}
+            </TextSpan>
+          )
+        })}
         <p className="md:text-xl text-white mb-20 pb-8 capitalize">
             <span className="font-bold">Software </span>
             <span className="font-bold">developer</span> and{" "}
