@@ -1,7 +1,7 @@
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 
-function TextSpan({children}) {
+function TextSpan({children, onMouseEnter, onMouseLeave}) {
     const controls = useAnimationControls();
     const [isPlaying, setIsplaying] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -33,21 +33,21 @@ function TextSpan({children}) {
         setIsHovered(false)
     }
   return (
-    <motion.span 
-        animate={controls}
-        onMouseOver={() => {
-            if(!isPlaying)
-                rubberBand()
-        }}
-        onAnimationComplete={() => setIsplaying(false)}
-        className={`select-none inline-block font-iskry text-white text-6xl md:text-8xl font-bold ${
-            isHovered ? 'text-gray-700' : 'text-white'
-          }`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-    >
-        {children}
-    </motion.span>
+    <>
+        <motion.span 
+            animate={controls}
+            onMouseOver={() => {
+                if(!isPlaying)
+                    rubberBand()
+            }}
+            onAnimationComplete={() => setIsplaying(false)}
+            className={"select-none inline-block font-iskry text-white text-6xl md:text-8xl font-bold"}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+        >
+            {children}
+        </motion.span>
+    </>
   )
 }
 

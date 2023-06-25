@@ -1,6 +1,6 @@
 import TextSpan from './textspan'
 
-export default function HeroTexts() {
+export default function HeroTexts({onMouseEnter, onMouseLeave}) {
   const firstName = "Albert".split("");
   const lastName = "Mwasisoba".split("");
 
@@ -9,7 +9,7 @@ export default function HeroTexts() {
         <h1 className="text-4xl text-gray-500 pb-4">{"Hello, I'm"}</h1>
         {firstName.map((letter, index) => {
           return (
-            <TextSpan key={index}>
+            <TextSpan key={index} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
               {letter === " " ? "\n" : letter}
             </TextSpan>
           )
@@ -17,7 +17,7 @@ export default function HeroTexts() {
         <br/>
         {lastName.map((letter, index) => {
           return (
-            <TextSpan key={index}>
+            <TextSpan key={index} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
               {letter === " " ? "\n" : letter}
             </TextSpan>
           )
