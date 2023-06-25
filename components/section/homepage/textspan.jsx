@@ -4,7 +4,6 @@ import { motion, useAnimationControls } from 'framer-motion'
 function TextSpan({children, onMouseEnter, onMouseLeave}) {
     const controls = useAnimationControls();
     const [isPlaying, setIsplaying] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
 
     const rubberBand = () => {
         controls.start({
@@ -25,30 +24,23 @@ function TextSpan({children, onMouseEnter, onMouseLeave}) {
         setIsplaying(true)
     }
 
-    const handleMouseEnter = () => {
-        setIsHovered(true)
-    }
-
-    const handleMouseLeave = () => {
-        setIsHovered(false)
-    }
-  return (
-    <>
-        <motion.span 
-            animate={controls}
-            onMouseOver={() => {
-                if(!isPlaying)
-                    rubberBand()
-            }}
-            onAnimationComplete={() => setIsplaying(false)}
-            className={"select-none inline-block font-iskry text-white text-6xl md:text-8xl font-bold"}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-        >
-            {children}
-        </motion.span>
-    </>
-  )
+    return (
+        <>
+            <motion.span 
+                animate={controls}
+                onMouseOver={() => {
+                    if(!isPlaying)
+                        rubberBand()
+                }}
+                onAnimationComplete={() => setIsplaying(false)}
+                className={"select-none inline-block font-iskry text-white text-6xl md:text-8xl font-bold"}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+            >
+                {children}
+            </motion.span>
+        </>
+    )
 }
 
 export default TextSpan
