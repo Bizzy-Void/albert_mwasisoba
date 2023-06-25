@@ -96,7 +96,7 @@ const navRoutes = [
 ]
 
 const aboutMe = {
-    bio: "Software developer and Graphic designer working productively in dynamic environments. Fluent in Javascript and Dart. Focused on achieving project goals with an efficient and minimalistic approach.",
+    bio: "Software developer and Graphics designer working productively in dynamic environments. Fluent in Javascript and Dart. Focused on achieving project goals with an efficient and minimalistic approach.",
     hobbies: "drawing,photography,music,video games",
 };
 
