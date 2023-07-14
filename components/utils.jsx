@@ -11,13 +11,15 @@ import {
     SiSwagger,
     SiAdobephotoshop,
     SiAdobeillustrator,
+    SiFlutter,
 } from 'react-icons/si';
 
 const skills = [
+    
     {
-        title: 'Flutter Dev',
-        link: 'https://flutter.dev/',
-        icon: <DiFlutter />,
+        title: 'Flutter',
+        link: 'https://nextjs.org/',
+        icon: <SiFlutter />,
     },
     {
         title: 'NextJs',
@@ -60,7 +62,7 @@ const skills = [
         icon: <SiGit />,
     },
     {
-        title: 'Swagger',
+        title: 'Swagger API',
         link: 'https://swagger.io/',
         icon: <SiSwagger />,
     },
