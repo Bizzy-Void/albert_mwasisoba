@@ -14,6 +14,8 @@ import {
     SiFlutter,
 } from 'react-icons/si';
 
+const baseUrl = "https://albizzy.github.io/portfolio-assets/images"
+
 const skills = [
     
     {
@@ -120,11 +122,43 @@ const mediaData = {
     ]
 }
 
+const works = [
+    {
+        title: "This website",
+        banners: [
+            {
+                url: baseUrl + "/portfolio/cover.png",
+                alt: "a.me cover"
+            },
+            {
+                url: baseUrl + "/portfolio/first.png",
+                alt: "a.me website banner"
+            }
+        ],
+        details: "This personal portfolio website. Created with [NextJS](https://nextjs.org/)",
+    },
+    {
+        title: "Travel Experience",
+        banners: [
+            {
+                url: baseUrl + "/travelExperience/cover.png",
+                alt: "a.me cover"
+            },
+            {
+                url: baseUrl + "/travelExperience/first.png",
+                alt: "a.me website banner"
+            }
+        ],
+        details: "Official website for *The Travel Experience*. A company which focus on providing tourist with services when visiting national parks in Tanzania. Created with [ReactJS](https://reactjs.org/)",
+    },
+]
+
 const data = {
     skills,
     navRoutes,
     mediaData,
     aboutMe,
+    works,
 }
 
 export default data

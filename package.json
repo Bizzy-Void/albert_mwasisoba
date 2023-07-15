@@ -20,6 +20,9 @@
     "react-calendly": "^4.1.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
+    "react-markdown": "^8.0.7",
+    "remark-gfm": "^3.0.1",
+    "swiper": "^10.0.4",
     "typescript": "5.0.3"
   },
   "devDependencies": {

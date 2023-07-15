@@ -4,9 +4,8 @@ import SkillTools from './skillTools'
 
 function SkillsPage() {
   return (
-    <div className='bg-bg_color flex flex-col px-4 md:px-10 lg:px-32 items-center h-full'>
-        <h1 className='text-white text-4xl'>My skills</h1>
-        <p className='text-gray-300 text-sm mb-10'>{"Here's what I do best"}</p>
+    <div className='bg-bg_color flex flex-col px-4 md:px-10 lg:px-32 items-center h-full md:justify-center'>
+        <h1 className='font-bold w-full text-4xl text-white text-center pb-5'>Skills & Tools</h1>
         <SkillTools data = {data}/>
     </div>
   )
