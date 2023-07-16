@@ -151,6 +151,24 @@ const works = [
         ],
         details: "Official website for *The Travel Experience*. A company which focus on providing tourist with services when visiting national parks in Tanzania. Created with [ReactJS](https://reactjs.org/)",
     },
+    {
+        title: "Graphic designs",
+        banners: [
+            {
+                url: baseUrl + "/graphicsDesign/cover.png",
+                alt: "graphic designs cover"
+            },
+            {
+                url: baseUrl + "/graphicsDesign/first.png",
+                alt: "logo banner"
+            },
+            {
+                url: baseUrl + "/graphicsDesign/second.png",
+                alt: "posters banner"
+            },
+        ],
+        details: "Collection of some graphic designs I have done for various clients for the past few years.",
+    },
 ]
 
 const data = {
