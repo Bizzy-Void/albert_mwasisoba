@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
-import Input from "@/components/common/input";
-import TextArea from "@/components/common/textarea";
+import Input from "@/components/common/input.tsx";
+import TextArea from "@/components/common/textarea.tsx";
 import Heading from "@/components/common/heading";
 import Paragraph from "@/components/common/paragraph";
 
@@ -10,7 +10,61 @@ import data from "@/components/utils";
 import { PopupButton } from "react-calendly";
 
 function ContactPage() {
+    const [full_name, setFull_name] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [budget, setBudget] = useState("");
+    const [project, setProject] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+    const [disabled, setDisabled] = useState(true);
     const [showWidget, setShowWidget] = useState(false);
+
+    function saySent() {
+        setSubmitted(true);
+        setTimeout(() => {
+            setSubmitted(false);
+        }, 2000);
+    }
+
+    useEffect(() => {
+        if (full_name === "" || email === "" || phone === "" || project === "") {
+            setDisabled(true);
+        } else {
+            setDisabled(false);
+        }
+    }, [full_name, email, phone, project]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitting(true);
+        let data = {
+            full_name,
+            email,
+            phone,
+            budget,
+            project,
+        };
+
+        fetch("/api/contact", {
+            method: "POST",
+            headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        }).then((res) => {
+            setSubmitting(false);
+            if (res.status === 200) {
+            setFull_name("");
+            setEmail("");
+            setBudget("");
+            setPhone("");
+            setProject("");
+            saySent();
+            }
+        });
+    };
 
     useEffect(() => {
         setTimeout(function () {
@@ -64,27 +118,67 @@ function ContactPage() {
             <div className='w-full md:w-1/2'>
                 <div className='bg-description_bg rounded-2xl p-10'>
                     <form>
-                    <input
-                        placeholder='Your name'
-                        className='w-full py-2 bg-transparent border-x-0 border-t-0  px-4 border-2 my-2 outline-none text-gray-500 focus:text-white border-gray-400 focus:border-white'
+                    <Input
+                        type="text"
+                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                        placeholder="Your full name"
+                        value={full_name}
+                        onDataChange={(e) => {
+                          setFull_name(e.target.value);
+                        }}
                     />
-                    <input
-                        placeholder='Your email address'
-                        className='w-full py-2 bg-transparent border-x-0 border-t-0  px-4 border-2 my-2 outline-none text-gray-500 focus:text-white border-gray-400 focus:border-white'
+                    <Input
+                        type="email"
+                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                        placeholder="Your email address"
+                        value={email}
+                        onDataChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
                     />
-                    <input
-                        placeholder='Your phone number'
-                        className='w-full py-2 bg-transparent border-x-0 border-t-0  px-4 border-2 my-2 outline-none text-gray-500 focus:text-white border-gray-400 focus:border-white'
+                    <Input
+                        type="tel"
+                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                        placeholder="Your phone number"
+                        value={phone}
+                        onDataChange={(e) => {
+                            setPhone(e.target.value);
+                        }}
                     />
-                    <input
-                        placeholder='Your budget'
-                        className='w-full py-2 bg-transparent border-x-0 border-t-0  px-4 border-2 my-2 outline-none text-gray-500 focus:text-white border-gray-400 focus:border-white'
+                    <Input
+                        type="text"
+                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                        placeholder="Your budget (optional)"
+                        value={budget}
+                        onDataChange={(e) => {
+                            setBudget(e.target.value);
+                        }}
                     />
-                    <textarea
-                        placeholder='Email address'
-                        className='w-full py-2 bg-transparent border-x-0 border-t-0  px-4 border-2 my-2 outline-none text-gray-500 focus:text-white border-gray-400 focus:border-white'
+                    <TextArea
+                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                        placeholder="Project description"
+                        value={project}
+                        onDataChange={(e) => {
+                            setProject(e.target.value);
+                        }}
                         rows={4}
-                    ></textarea>
+                    />
+                    <div className="flex justify-end">
+                        <button
+                            disabled={submitting || disabled}
+                            onClick={(e) => {
+                            handleSubmit(e);
+                            }}
+                            className={
+                            submitted
+                                ? " hover:bg-green-500  border-green-500   hover:text-white text-green-500 "
+                                : " hover:bg-white  border-white   hover:text-gray-500 text-white " +
+                                " bg-transparent duration-200 cursor-pointer rounded-2xl border-2 disabled:bg-gray-500 px-4 py-2 disabled:border-gray-500 disabled:text-gray-700"
+                            }
+                        >
+                            {submitting ? "Sending..." : submitted ? "Sent " : "Send"}
+                        </button>
+                    </div>
                     </form>
                 </div>
             </div>
