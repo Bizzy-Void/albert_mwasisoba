@@ -1,7 +1,7 @@
 import { useWindowSize } from "hooks/useWindowSize";
 import WorkItem from "../workitem";
 
-const WorkItemsLayout = ({works}) => {
+const WorkItemsLayout = ({works, setIframeUrl, toggleModal}) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const width = useWindowSize().width;
 
@@ -13,6 +13,8 @@ const WorkItemsLayout = ({works}) => {
                     <div className="w-full" key={index}>
                     <WorkItem
                         work={work}
+                        setIframeUrl={setIframeUrl}
+                        toggleModal={toggleModal}
                     />
                     </div>
                 ))}
@@ -32,6 +34,8 @@ const WorkItemsLayout = ({works}) => {
                             <div className="w-full" key={index}>
                             <WorkItem
                                 work={work}
+                                setIframeUrl={setIframeUrl}
+                                toggleModal={toggleModal}
                             />
                             </div>
                         )
@@ -54,6 +58,8 @@ const WorkItemsLayout = ({works}) => {
                             <div className="w-full" key={index}>
                             <WorkItem
                                 work={work}
+                                setIframeUrl={setIframeUrl}
+                                toggleModal={toggleModal}
                             />
                             </div>
                         )
@@ -77,7 +83,7 @@ const WorkItemsLayout = ({works}) => {
                             <WorkItem
                                 work={work}
                                 setIframeUrl={(url) => setIframeUrl(url)}
-                                toggelModal={() => toggelModal()}
+                                toggleModal={() => toggleModal()}
                             />
                             </div>
                         )

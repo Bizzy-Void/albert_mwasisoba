@@ -135,6 +135,7 @@ const works = [
                 alt: "a.me website banner"
             }
         ],
+        url: "https://www.albertmwasisoba.me/",
         details: "This personal portfolio website. Created with [NextJS](https://nextjs.org/)",
     },
     {
@@ -149,6 +150,7 @@ const works = [
                 alt: "a.me website banner"
             }
         ],
+        url: null,
         details: "Official website for *The Travel Experience*. A company which focus on providing tourist with services when visiting national parks in Tanzania. Created with [ReactJS](https://reactjs.org/)",
     },
     {
@@ -167,6 +169,7 @@ const works = [
                 alt: "posters banner"
             },
         ],
+        url: null,
         details: "Collection of some graphic designs I have done for various clients for the past few years.",
     },
 ]
