@@ -9,7 +9,7 @@ function AlbertImage() {
           alt="albert mwasisoba Background"
           height="200"
           width="500"
-          style={{width: "100%", height: "580px"}}
+          style={{width: "100%", height: "480px"}}
         />
       </aside>
     </div>
