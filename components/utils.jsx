@@ -124,10 +124,21 @@ const mediaData = {
 
 const works = [
     {
+        title: "Subcode Africa",
+        banners: [
+            {
+                url: baseUrl + "/subcode/cover.png",
+                alt: "subcode cover"
+            },
+        ],
+        url: "http://subcode.africa/",
+        details: "Official website for Subcode Africa. A company based on providing digital solutions using design and code. Created with [HTML5](https://en.wikipedia.org/wiki/HTML5#:~:text=Article%20Talk,Web%20Consortium%20(W3C)%20recommendation.),[TailwindCSS](https://tailwindcss.com/) and VanillaJS",
+    },
+    {
         title: "This website",
         banners: [
             {
-                url: baseUrl + "/portfolio/cover.png",
+                url: baseUrl + "/portfolio/cover1.png",
                 alt: "a.me cover"
             },
             {
@@ -136,7 +147,7 @@ const works = [
             }
         ],
         url: "https://www.albertmwasisoba.me/",
-        details: "This personal portfolio website. Created with [NextJS](https://nextjs.org/)",
+        details: "This is my personal portfolio website. Created with [NextJS](https://nextjs.org/)",
     },
     {
         title: "Travel Experience",
@@ -150,7 +161,7 @@ const works = [
                 alt: "a.me website banner"
             }
         ],
-        url: null,
+        url: "https://travelexperience-two.vercel.app/home",
         details: "Official website for *The Travel Experience*. A company which focus on providing tourist with services when visiting national parks in Tanzania. Created with [ReactJS](https://reactjs.org/)",
     },
     {
