@@ -131,8 +131,8 @@ const works = [
                 alt: "subcode cover"
             },
         ],
-        url: "http://subcode.africa/",
-        details: "Official website for Subcode Africa. A company based on providing digital solutions using design and code. Created with [HTML5](https://en.wikipedia.org/wiki/HTML5#:~:text=Article%20Talk,Web%20Consortium%20(W3C)%20recommendation.),[TailwindCSS](https://tailwindcss.com/) and VanillaJS",
+        url: "https://www.subcode.africa/",
+        details: "Official website for Subcode Africa. A company based on providing digital solutions using design and code. Created with [NextJS](https://nextjs.org/docs) and [TailwindCSS](https://tailwindcss.com/)",
     },
     {
         title: "This website",
