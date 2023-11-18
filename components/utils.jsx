@@ -135,6 +135,17 @@ const works = [
         details: "Official website for Subcode Africa. A company based on providing digital solutions using design and code. Created with [NextJS](https://nextjs.org/docs) and [TailwindCSS](https://tailwindcss.com/)",
     },
     {
+        title: "Tanzania Internet Summit",
+        banners: [
+            {
+                url: baseUrl + "/tanzaniaInternetSummit/cover.jpg",
+                alt: "tanzania internet summit cover"
+            },
+        ],
+        url: "https://summit.eadevs.com/",
+        details: "This is the official website for Tanzania Internet Summit. An event organized by Tanzania Internet Service Providers (TISPA). Created with [NextJS](https://nextjs.org/docs) and [TailwindCSS](https://tailwindcss.com/)",
+    },
+    {
         title: "This website",
         banners: [
             {
