@@ -13,10 +13,6 @@ function Homepage() {
 
   const [cursorVariants, setCursorVariants] = useState("default");
 
-  const [ isHoliday, setIsHoliday] = useState(false);
-
-  
-
   useEffect(() => {
     const mouseMove = e => {
       setMousePosition({
@@ -48,12 +44,10 @@ function Homepage() {
   }
 
   const textEnter = () => {
-    setIsHoliday(true);
     setCursorVariants("text")
   };
 
   const textLeave = () => {
-    setIsHoliday(false);
     setCursorVariants("default")
   };
 
@@ -71,7 +65,6 @@ function Homepage() {
                 <HeroTexts 
                   onMouseEnter={textEnter} 
                   onMouseLeave={textLeave}
-                  isHoliday={isHoliday}
                   holidayColor="text-red-500"
                 />
                 <AlbertImage/>
