@@ -33,7 +33,7 @@ function TextSpan({children, onMouseEnter, onMouseLeave}) {
                         rubberBand()
                 }}
                 onAnimationComplete={() => setIsplaying(false)}
-                className={"select-none inline-block font-iskry max-w-4xl text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"}
+                className={"select-none inline-block font-iskry max-w-4xl text-white text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >
