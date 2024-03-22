@@ -1,8 +1,8 @@
 require("dotenv").config();
-const PASSWORD = process.env.password;
-const PASSWORD2 = process.env.password2;
-const GMAIL = process.env.gmail;
-const GMAIL_FROM = process.env.gmail_from;
+const PASSWORD = process.env.PASSWORD;
+const PASSWORD2 = process.env.PASSWORD2;
+const GMAIL = process.env.GMAIL;
+const GMAIL_FROM = process.env.GMAIL_FROM;
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -403,17 +403,17 @@ export default async function handler(
          `,
     };
   
-    tranportInbox.sendMail(mailData, function (err, info) {
-      if (err) console.log(err);
-      else if (info.accepted[0] === GMAIL) {
-        tranportOutbox.sendMail(fromAlbert, function (err, info) {
-          if (err) {
-            console.log(err);
-            res.status(200).end();
-          } else res.status(200).end();
-        });
-  
-        res.status(200).end();
+    tranportInbox.sendMail(mailData, function (err) {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Error sending email' });
       }
+      tranportOutbox.sendMail(fromAlbert, function (err) {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ message: 'Error sending confirmation email' });
+        }
+        return res.status(200).json({ message: 'Emails sent successfully' });
+      });
     });
   }
