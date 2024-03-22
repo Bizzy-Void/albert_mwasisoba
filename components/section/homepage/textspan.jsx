@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 
 function TextSpan({children, onMouseEnter, onMouseLeave}) {

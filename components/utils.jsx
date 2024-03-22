@@ -124,6 +124,17 @@ const mediaData = {
 
 const works = [
     {
+        title: "Rashal Energies",
+        banners: [
+            {
+                url: baseUrl + "/rashal/cover.png",
+                alt: "Rashal cover"
+            },
+        ],
+        url: "https://rashalpetroleum.com/home",
+        details: "Official website for Rashal Energies Tanzania. A company commited to providing sustainable, reliable, and affordable energy solutions. Created with [Vite React](https://vitejs.dev/guide/) and [TailwindCSS](https://tailwindcss.com/)",
+    },
+    {
         title: "Subcode Africa",
         banners: [
             {
