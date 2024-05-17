@@ -124,15 +124,15 @@ const mediaData = {
 
 const works = [
     {
-        title: "Rashal Energies",
+        title: "Drips4Geeks",
         banners: [
             {
-                url: baseUrl + "/rashal/cover.png",
-                alt: "Rashal cover"
+                url: baseUrl + "/drips4Geeks/cover.png",
+                alt: "Drips4Geeks cover"
             },
         ],
-        url: "https://rashalpetroleum.com/home",
-        details: "Official website for Rashal Energies Tanzania. A company commited to providing sustainable, reliable, and affordable energy solutions. Created with [Vite React](https://vitejs.dev/guide/) and [TailwindCSS](https://tailwindcss.com/)",
+        url: "https://www.drips4geeks.store/",
+        details: "Official website for Drips4Geeks Store. This is an online store where every geek can find their tyle. Created with [NextJS](https://nextjs.org/docs), [Shadcn UI](https://ui.shadcn.com/docs), and [TailwindCSS](https://tailwindcss.com/)",
     },
     {
         title: "Subcode Africa",
