@@ -172,19 +172,19 @@ const works = [
         details: "This is my personal portfolio website. Created with [NextJS](https://nextjs.org/)",
     },
     {
-        title: "Travel Experience",
+        title: "All Wheels Experience",
         banners: [
             {
                 url: baseUrl + "/travelExperience/cover.png",
-                alt: "a.me cover"
+                alt: "all wheels experience cover"
             },
             {
                 url: baseUrl + "/travelExperience/first.png",
-                alt: "a.me website banner"
+                alt: "all wheels experience website banner"
             }
         ],
-        url: "https://travelexperience-two.vercel.app/home",
-        details: "Official website for *The Travel Experience*. A company which focus on providing tourist with services when visiting national parks in Tanzania. Created with [ReactJS](https://reactjs.org/)",
+        url: "https://www.allwheelsexperience.com/home",
+        details: "Official website for *All Wheels Experience*. A company which focus on providing tourist with services when visiting national parks in Tanzania. Created with [ReactJS](https://reactjs.org/)",
     },
     {
         title: "Graphic designs",
