@@ -18,7 +18,7 @@ function WhoAmI() {
     <div className='flex flex-col gap-3' id="about-root">
       <div className='bg-description_bg py-10 px-10 rounded-2xl'>
         <div className='flex flex-row justify-between items-center'>
-          <div className='text-3xl text-white'>Who am I?</div>
+          <div className='font-bold w-full text-4xl text-white'>Who am I?</div>
           <Image 
             src={"/images/bizzy.jpg"}
             alt="albert mwasisoba Background"
@@ -28,8 +28,8 @@ function WhoAmI() {
           />
         </div>
         {/* <Paragraph text={data.aboutMe.bio} className="text-white mb-4"/> */}
-        <div className='text-xl text-gray-300'>{"I'm Albert Mwasisoba"}</div>
-        <p className='text-md py-4 text-gray-500'>{data.aboutMe.bio}</p>
+        <div className='text-xl py-4 text-gray-300'>{"I'm Albert Mwasisoba"}</div>
+        <p className='text-md pb-3 text-gray-500'>{data.aboutMe.bio}</p>
         {showWidget && (
           <PopupButton
             url="https://calendly.com/albertmwasisoba/lets-talk"

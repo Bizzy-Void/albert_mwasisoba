@@ -1,10 +1,9 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 
-function TextSpan({children}) {
+function TextSpan({children, onMouseEnter, onMouseLeave}) {
     const controls = useAnimationControls();
     const [isPlaying, setIsplaying] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
 
     const rubberBand = () => {
         controls.start({
@@ -25,30 +24,23 @@ function TextSpan({children}) {
         setIsplaying(true)
     }
 
-    const handleMouseEnter = () => {
-        setIsHovered(true)
-    }
-
-    const handleMouseLeave = () => {
-        setIsHovered(false)
-    }
-  return (
-    <motion.span 
-        animate={controls}
-        onMouseOver={() => {
-            if(!isPlaying)
-                rubberBand()
-        }}
-        onAnimationComplete={() => setIsplaying(false)}
-        className={`select-none inline-block font-iskry text-white text-6xl md:text-8xl font-bold ${
-            isHovered ? 'text-gray-700' : 'text-white'
-          }`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-    >
-        {children}
-    </motion.span>
-  )
+    return (
+        <>
+            <motion.span 
+                animate={controls}
+                onMouseOver={() => {
+                    if(!isPlaying)
+                        rubberBand()
+                }}
+                onAnimationComplete={() => setIsplaying(false)}
+                className={"select-none inline-block font-iskry max-w-4xl text-white text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+            >
+                {children}
+            </motion.span>
+        </>
+    )
 }
 
 export default TextSpan
