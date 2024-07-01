@@ -4,6 +4,7 @@ import data from '@/components/utils'
 import Image from 'next/image'
 import Button from '@/components/common/button'
 import { PopupButton } from "react-calendly";
+import Hobbies from './hobbies';
 
 function WhoAmI() {
   const [showWidget, setShowWidget] = useState(false);
@@ -46,10 +47,7 @@ function WhoAmI() {
         />
       </div>
 
-      <div className='bg-description_bg py-10 px-10 rounded-2xl'>
-        <div className='text-xl text-white'>Hobbies</div>
-        <p className='text-md capitalize text-gray-500'>{data.aboutMe.hobbies.replaceAll(",", " | ")}</p>
-    </div>
+      <Hobbies data ={data} />
     </div>
   )
 }
