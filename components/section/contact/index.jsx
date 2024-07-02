@@ -2,11 +2,7 @@ import { useState, useEffect } from 'react'
 
 import Input from "@/components/common/input.tsx";
 import TextArea from "@/components/common/textarea.tsx";
-import Heading from "@/components/common/heading";
-import Paragraph from "@/components/common/paragraph";
-
 import data from "@/components/utils";
-
 import { PopupButton } from "react-calendly";
 
 function ContactPage() {
@@ -27,6 +23,14 @@ function ContactPage() {
         }, 2000);
     }
 
+    function clearFields() {
+        setFull_name("");
+        setEmail("");
+        setBudget("");
+        setPhone("");
+        setProject("");
+    }
+
     useEffect(() => {
         if (full_name === "" || email === "" || phone === "" || project === "") {
             setDisabled(true);
@@ -37,33 +41,38 @@ function ContactPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitting(true);
-        let data = {
-            full_name,
-            email,
-            phone,
-            budget,
-            project,
-        };
+        
+        try {
+            setSubmitting(true);
 
-        fetch("/api/contact", {
-            method: "POST",
-            headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        }).then((res) => {
-            setSubmitting(false);
-            if (res.status === 200) {
-            setFull_name("");
-            setEmail("");
-            setBudget("");
-            setPhone("");
-            setProject("");
-            saySent();
+            let data = {
+                full_name,
+                email,
+                phone,
+                budget,
+                project,
+            };
+
+            const stringifiedData = JSON.stringify(data);
+            const response = fetch("api/contact", {
+                methond: "POST",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                },
+                body: stringifiedData,
+            })
+
+            if (response.status === 200) {
+                clearFields();
+                saySent();
             }
-        });
+        } catch (error) {
+            
+            console.error(error)
+        } finally {
+            setSubmitting(false);
+        }
     };
 
     useEffect(() => {
@@ -118,67 +127,67 @@ function ContactPage() {
             <div className='w-full md:w-1/2'>
                 <div className='bg-description_bg rounded-2xl p-10'>
                     <form>
-                    <Input
-                        type="text"
-                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
-                        placeholder="Your full name"
-                        value={full_name}
-                        onDataChange={(e) => {
-                          setFull_name(e.target.value);
-                        }}
-                    />
-                    <Input
-                        type="email"
-                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
-                        placeholder="Your email address"
-                        value={email}
-                        onDataChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                    />
-                    <Input
-                        type="tel"
-                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
-                        placeholder="Your phone number"
-                        value={phone}
-                        onDataChange={(e) => {
-                            setPhone(e.target.value);
-                        }}
-                    />
-                    <Input
-                        type="text"
-                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
-                        placeholder="Your budget (optional)"
-                        value={budget}
-                        onDataChange={(e) => {
-                            setBudget(e.target.value);
-                        }}
-                    />
-                    <TextArea
-                        classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
-                        placeholder="Project description"
-                        value={project}
-                        onDataChange={(e) => {
-                            setProject(e.target.value);
-                        }}
-                        rows={4}
-                    />
-                    <div className="flex justify-end">
-                        <button
-                            disabled={submitting || disabled}
-                            onClick={(e) => {
-                            handleSubmit(e);
+                        <Input
+                            type="text"
+                            classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                            placeholder="Your full name"
+                            value={full_name}
+                            onDataChange={(e) => {
+                            setFull_name(e.target.value);
                             }}
-                            className={
-                            submitted
-                                ? " hover:bg-green-500  border-green-500   hover:text-white text-green-500 "
-                                : " hover:bg-white  border-white   hover:text-gray-500 text-white " +
-                                " bg-transparent duration-200 cursor-pointer rounded-2xl border-2 disabled:bg-gray-500 px-4 py-2 disabled:border-gray-500 disabled:text-gray-700"
-                            }
-                        >
-                            {submitting ? "Sending..." : submitted ? "Sent " : "Send"}
-                        </button>
-                    </div>
+                        />
+                        <Input
+                            type="email"
+                            classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                            placeholder="Your email address"
+                            value={email}
+                            onDataChange={(e) => {
+                                setEmail(e.target.value);
+                            }}
+                        />
+                        <Input
+                            type="tel"
+                            classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                            placeholder="Your phone number"
+                            value={phone}
+                            onDataChange={(e) => {
+                                setPhone(e.target.value);
+                            }}
+                        />
+                        <Input
+                            type="text"
+                            classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                            placeholder="Your budget (optional)"
+                            value={budget}
+                            onDataChange={(e) => {
+                                setBudget(e.target.value);
+                            }}
+                        />
+                        <TextArea
+                            classes="text-gray-400 focus:text-white border-b-gray-400 focus:border-b-white"
+                            placeholder="Project description"
+                            value={project}
+                            onDataChange={(e) => {
+                                setProject(e.target.value);
+                            }}
+                            rows={4}
+                        />
+                        <div className="flex justify-end">
+                            <button
+                                disabled={submitting || disabled}
+                                onClick={(e) => {
+                                handleSubmit(e);
+                                }}
+                                className={
+                                submitted
+                                    ? " hover:bg-green-500  border-green-500   hover:text-white text-green-500 "
+                                    : " hover:bg-white  border-white   hover:text-gray-500 text-white " +
+                                    " bg-transparent duration-200 cursor-pointer rounded-2xl border-2 disabled:bg-gray-500 px-4 py-2 disabled:border-gray-500 disabled:text-gray-700"
+                                }
+                            >
+                                {submitting ? "Sending..." : submitted ? "Sent " : "Send"}
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
