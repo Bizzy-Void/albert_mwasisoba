@@ -53,14 +53,13 @@ function ContactPage() {
                 project,
             };
 
-            const stringifiedData = JSON.stringify(data);
             const response = fetch("api/contact", {
                 methond: "POST",
                 headers: {
                     Accept: "application/json, text/plain, */*",
                     "Content-Type": "application/json",
                 },
-                body: stringifiedData,
+                body: JSON.stringify(data),
             })
 
             if (response.status === 200) {
