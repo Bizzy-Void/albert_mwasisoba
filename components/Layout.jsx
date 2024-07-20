@@ -26,7 +26,7 @@ function Layout({ children }) {
               <div className="absolute bottom-0 md:top-0 right-20 w-44 h-44 bg-gray-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
               <div className="absolute bottom-12 md:bottom-32 right-20 w-72 h-72 bg-gray-400 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
               {children}
-              {isBirthday && 
+              {isBirthday() && 
                 <div className="confetti-container absolute top-0 left-0 right-0 bottom-0">
                   <Confetti />
                 </div>
