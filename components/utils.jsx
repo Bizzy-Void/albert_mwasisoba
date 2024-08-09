@@ -124,6 +124,17 @@ const mediaData = {
 
 const works = [
     {
+        title: "Varsitymart",
+        banners: [
+            {
+                url: baseUrl + "/varsitymart/cover.png",
+                alt: "Varsitymart cover"
+            },
+        ],
+        url: "https://www.varsitymart.co/home",
+        details: "Official website for Varsitymart. An innovative e-commerce platform designed to revolutionize online shopping in Tanzania. This project, a collaborative effort with my friend, focuses on creating a seamless and efficient user experience while providing unique features tailored to the local market. Created with [Vite React](https://vitejs.dev/), and [TailwindCSS](https://tailwindcss.com/)",
+    },
+    {
         title: "Drips4Geeks",
         banners: [
             {
@@ -132,30 +143,30 @@ const works = [
             },
         ],
         url: "https://www.drips4geeks.store/",
-        details: "Official website for Drips4Geeks Store. This is an online store where every geek can find their tyle. Created with [NextJS](https://nextjs.org/docs), [Shadcn UI](https://ui.shadcn.com/docs), and [TailwindCSS](https://tailwindcss.com/)",
+        details: "Official website for Drips4Geeks Store. This is an online store where every geek can find their style. Created with [NextJS](https://nextjs.org/docs), [Shadcn UI](https://ui.shadcn.com/docs), and [TailwindCSS](https://tailwindcss.com/)",
     },
-    {
-        title: "Subcode Africa",
-        banners: [
-            {
-                url: baseUrl + "/subcode/cover.png",
-                alt: "subcode cover"
-            },
-        ],
-        url: "https://www.subcode.africa/",
-        details: "Official website for Subcode Africa. A company based on providing digital solutions using design and code. Created with [NextJS](https://nextjs.org/docs) and [TailwindCSS](https://tailwindcss.com/)",
-    },
-    {
-        title: "Tanzania Internet Summit",
-        banners: [
-            {
-                url: baseUrl + "/tanzaniaInternetSummit/cover.jpg",
-                alt: "tanzania internet summit cover"
-            },
-        ],
-        url: "https://summit.eadevs.com/",
-        details: "This is the official website for Tanzania Internet Summit. An event organized by Tanzania Internet Service Providers (TISPA). Created with [NextJS](https://nextjs.org/docs) and [TailwindCSS](https://tailwindcss.com/)",
-    },
+    // {
+    //     title: "Subcode Africa",
+    //     banners: [
+    //         {
+    //             url: baseUrl + "/subcode/cover.png",
+    //             alt: "subcode cover"
+    //         },
+    //     ],
+    //     url: "https://www.subcode.africa/",
+    //     details: "Official website for Subcode Africa. A company based on providing digital solutions using design and code. Created with [NextJS](https://nextjs.org/docs) and [TailwindCSS](https://tailwindcss.com/)",
+    // },
+    // {
+    //     title: "Tanzania Internet Summit",
+    //     banners: [
+    //         {
+    //             url: baseUrl + "/tanzaniaInternetSummit/cover.jpg",
+    //             alt: "tanzania internet summit cover"
+    //         },
+    //     ],
+    //     url: "https://summit.eadevs.com/",
+    //     details: "This is the official website for Tanzania Internet Summit. An event organized by Tanzania Internet Service Providers (TISPA). Created with [NextJS](https://nextjs.org/docs) and [TailwindCSS](https://tailwindcss.com/)",
+    // },
     {
         title: "This website",
         banners: [
