@@ -194,7 +194,7 @@ const works = [
                 alt: "all wheels experience website banner"
             }
         ],
-        url: "https://www.allwheelsexperience.com/home",
+        url: "https://allwheelsexperience.com",
         details: "Official website for *All Wheels Experience*. A company which focus on providing tourist with services when visiting national parks in Tanzania. Created with [ReactJS](https://reactjs.org/)",
     },
     {
