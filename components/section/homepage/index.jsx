@@ -22,7 +22,7 @@ function Homepage() {
                     />
                     <div
                         className={
-                            "text-white text-center md:absolute md:bottom-5"
+                            "text-white text-center absolute bottom-20 md:bottom-5"
                         }
                     >
                         <span
@@ -38,7 +38,7 @@ function Homepage() {
                         </span>
                     </div>
                     <div className="absolute bottom-20 w-72 h-72 bg-gray-100 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
-                    <div className={"absolute bottom-20"}>
+                    <div className={"absolute bottom-30 md:bottom-20"}>
                         <AlbertImage />
                     </div>
                 </div>
