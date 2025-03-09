@@ -1,9 +1,9 @@
 interface inputProps {
-    value: string;
-    type: string;
-    classes: string;
-    placeholder: string;
-    onDataChange: (e) => void;
+    value: string
+    type: string
+    classes: string
+    placeholder: string
+    onDataChange: (e) => void
 }
 
 export default function Input({
@@ -11,8 +11,8 @@ export default function Input({
     type,
     classes,
     placeholder,
-    onDataChange
-}:inputProps) {
+    onDataChange,
+}: inputProps) {
     return (
         <input
             type={type}

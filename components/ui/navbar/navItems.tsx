@@ -1,12 +1,12 @@
 import NavMenuItem from "@/components/common/navMenuItem"
-import data from "@/components/utils";
+import data from "@/components/utils"
 
 const NavItems = () => {
-    const navRoutes = data.navRoutes;
-    
-    return ( 
+    const navRoutes = data.navRoutes
+
+    return (
         <>
-            <ul className='font-neue text-xs uppercase gap-x-4 flex justify-between'>
+            <ul className="font-neue text-xs uppercase gap-x-4 flex justify-between">
                 {navRoutes.map((route, index) => (
                     <li key={index}>
                         <NavMenuItem title={route.title} path={route.path} />
@@ -14,7 +14,7 @@ const NavItems = () => {
                 ))}
             </ul>
         </>
-    );
+    )
 }
- 
-export default NavItems;
+
+export default NavItems

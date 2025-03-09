@@ -19,4 +19,4 @@ To run the website locally, you can follow these steps:
 
 ## Contact Me
 
-Thank you for visiting my portfolio website! If you have any questions or would like to get in touch, feel free to contact me at [almwassy@gmail.com    ].
+Thank you for visiting my portfolio website! If you have any questions or would like to get in touch, feel free to contact me at [almwassy@gmail.com ].

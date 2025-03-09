@@ -1,9 +1,9 @@
-import React from 'react'
-import Skill from '@/components/section/skill'
+import React from "react"
+import Skill from "@/components/section/skill"
 
 function SkillTools({ data }) {
-  return (
-    <div className="grid grid-cols-2 z-30 py-4 md:grid-cols-2 lg:grid-cols-3  gap-5">
+    return (
+        <div className="grid grid-cols-2 z-30 py-4 md:grid-cols-2 lg:grid-cols-3  gap-5">
             {data.skills.map((skill, index) => (
                 <Skill
                     icon={skill.icon}
@@ -12,8 +12,8 @@ function SkillTools({ data }) {
                     key={index}
                 />
             ))}
-    </div>
-  )
+        </div>
+    )
 }
 
 export default SkillTools

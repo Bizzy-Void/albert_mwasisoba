@@ -1,6 +1,3 @@
 {
-    "conventionalCommits.scopes": [
-        "UI",
-        "Works"
-    ]
+    "conventionalCommits.scopes": ["UI", "Works"]
 }

@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { motion, useAnimationControls } from 'framer-motion'
+import { useState } from "react"
+import { motion, useAnimationControls } from "framer-motion"
 
-function TextSpan({children, onMouseEnter, onMouseLeave}) {
-    const controls = useAnimationControls();
-    const [isPlaying, setIsplaying] = useState(false);
+function TextSpan({ children, onMouseEnter, onMouseLeave }) {
+    const controls = useAnimationControls()
+    const [isPlaying, setIsplaying] = useState(false)
 
     const rubberBand = () => {
         controls.start({
@@ -17,23 +17,24 @@ function TextSpan({children, onMouseEnter, onMouseLeave}) {
             ],
 
             transition: {
-                times: [0,.4,.6,.7,.8,.9],
+                times: [0, 0.4, 0.6, 0.7, 0.8, 0.9],
                 ease: "easeInOut",
-            }
+            },
         })
         setIsplaying(true)
     }
 
     return (
         <>
-            <motion.span 
+            <motion.span
                 animate={controls}
                 onMouseOver={() => {
-                    if(!isPlaying)
-                        rubberBand()
+                    if (!isPlaying) rubberBand()
                 }}
                 onAnimationComplete={() => setIsplaying(false)}
-                className={"select-none inline-block font-iskry max-w-4xl text-white text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"}
+                className={
+                    "select-none inline-block font-iskry max-w-4xl text-white text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold"
+                }
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >
