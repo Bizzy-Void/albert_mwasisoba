@@ -6,7 +6,7 @@ import Navbar from "./ui/navbar"
 
 function Layout({ children }) {
     return (
-        <div className="flex relative flex-col h-svh bg-bg_color">
+        <div className="flex relative flex-col h-screen bg-bg_color">
             <Navbar />
             <main className="w-full flex flex-grow font-neue">
                 <div className="bg-bg_color w-full h-full py-20">

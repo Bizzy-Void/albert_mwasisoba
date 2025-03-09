@@ -20,7 +20,11 @@ function Homepage() {
                         strokeColor="#ff0000"
                         minFontSize={36}
                     />
-                    <div className={"text-white text-center absolute bottom-5"}>
+                    <div
+                        className={
+                            "text-white text-center md:absolute md:bottom-5"
+                        }
+                    >
                         <span
                             className={
                                 "text-xl uppercase font-semibold tracking-wide"
